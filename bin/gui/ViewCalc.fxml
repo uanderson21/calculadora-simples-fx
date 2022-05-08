@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="110.0" prefHeight="110.0" prefWidth="727.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewCalcController">
+<AnchorPane minHeight="110.0" prefHeight="110.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewCalcController">
    <children>
       <TextField fx:id="txtValue1" layoutX="14.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0">
          <font>
@@ -27,8 +27,8 @@
             </Lighting>
          </effect>
       </TextField>
-      <Button fx:id="btnCalc" layoutX="522.0" layoutY="40.0" mnemonicParsing="false" onAction="#onBtnCalcAction" prefHeight="40.0" prefWidth="36.0" text="=" />
-      <TextField fx:id="txtValue2" layoutX="363.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0">
+      <Button fx:id="btnCalc" layoutX="423.0" layoutY="40.0" mnemonicParsing="false" onAction="#onBtnCalcAction" prefHeight="40.0" prefWidth="36.0" text="=" />
+      <TextField fx:id="txtValue2" layoutX="265.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -43,7 +43,7 @@
             </Lighting>
          </effect>
       </TextField>
-      <TextField fx:id="txtResult" editable="false" layoutX="565.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0">
+      <TextField fx:id="txtResult" editable="false" layoutX="469.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="150.0">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -58,7 +58,7 @@
             </Lighting>
          </effect>
       </TextField>
-      <ComboBox fx:id="cbOperadores" layoutX="176.0" layoutY="40.0" prefHeight="40.0" prefWidth="176.0" />
+      <ComboBox fx:id="cbOperadores" layoutX="176.0" layoutY="40.0" prefHeight="40.0" prefWidth="75.0" />
       <Label layoutX="14.0" layoutY="14.0" text="CALCULADORA SIMPLES" />
    </children>
 </AnchorPane>

@@ -17,7 +17,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.util.Callback;
 import model.Operador;
 import javafx.scene.control.Alert.AlertType;
 
@@ -45,7 +48,17 @@ public class ViewCalcController implements Initializable {
 		list.add(new Operador(1, "*"));
 			
 		obsOperadores = FXCollections.observableArrayList(list);		
-		cbOperadores.setItems(obsOperadores);		
+		cbOperadores.setItems(obsOperadores);	
+		
+		Callback<ListView<Operador>, ListCell<Operador>> factory = lv -> new ListCell<Operador>() {
+			@Override
+			protected void updateItem(Operador item, boolean empty) {
+				super.updateItem(item, empty);
+				setText(empty ? "" : item.getNome());
+			}
+		};
+		cbOperadores.setCellFactory(factory);
+		cbOperadores.setButtonCell(factory.call(null));		
 	}
 	
 	@FXML

@@ -28,9 +28,10 @@ public class Operador implements Serializable {
 
 	@Override
 	public String toString() {
-		return getNome();
+		return "Operador [id=" + id + ", nome=" + nome + "]";
 	}
-	
+
+
 	
 
 }
