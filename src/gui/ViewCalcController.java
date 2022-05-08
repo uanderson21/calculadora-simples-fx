@@ -33,26 +33,19 @@ public class ViewCalcController implements Initializable {
 	public ComboBox<Operador> cbOperadores;
 	@FXML
 	public Button btnCalc;
-	
-	private List<Operador> operadores = new ArrayList<>();
+
 	private ObservableList<Operador> obsOperadores;
 	double result;
 	
 	public void loadOperator() {
-		Operador opAdicao = new Operador(1, "+");
-		Operador opDivisao = new Operador(1, "/");
-		Operador opSubtracao = new Operador(1, "-");
-		Operador opMultiplicacao = new Operador(1, "*");
-		
-		operadores.add(opAdicao);
-		operadores.add(opDivisao);
-		operadores.add(opSubtracao);
-		operadores.add(opMultiplicacao);
-		
-		obsOperadores = FXCollections.observableArrayList(operadores);
-		
-		cbOperadores.setItems(obsOperadores);
-		
+		List<Operador> list = new ArrayList<>();
+		list.add(new Operador(1, "+"));
+		list.add(new Operador(1, "/"));
+		list.add(new Operador(1, "-"));
+		list.add(new Operador(1, "*"));
+			
+		obsOperadores = FXCollections.observableArrayList(list);		
+		cbOperadores.setItems(obsOperadores);		
 	}
 	
 	@FXML

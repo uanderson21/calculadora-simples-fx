@@ -1,7 +1,10 @@
 package model;
 
-public class Operador {
+import java.io.Serializable;
+
+public class Operador implements Serializable {
 	
+	private static final long serialVersionUID = 1L;
 	private int id;
 	private String nome;
 	
