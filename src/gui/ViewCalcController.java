@@ -8,9 +8,9 @@ import java.util.ResourceBundle;
 import calculadora.Adicao;
 import calculadora.Divisao;
 import calculadora.Multiplicacao;
-import calculadora.OperacaoBinaria;
 import calculadora.Subtracao;
 import gui.util.Alerts;
+import gui.util.Constraints;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -18,9 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import model.Operador;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert.AlertType;
 
 public class ViewCalcController implements Initializable {
@@ -59,9 +57,7 @@ public class ViewCalcController implements Initializable {
 	
 	@FXML
 	public void onBtnCalcAction() {
-		//valida
-		System.out.println("Valor 1: " + txtValue1.getText() + " - Valor 2: " + txtValue2.getText());
-		
+		//valida		
 		if ((txtValue1.getText().equals("")) || (txtValue2.getText().equals(""))) {
 			Alerts.showAlert("Calculadora", null, "Necessário informar todos os campos", AlertType.INFORMATION);
 			return;
@@ -103,8 +99,13 @@ public class ViewCalcController implements Initializable {
 
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		System.out.println("Valor 1: " + txtValue1.getText() + " - Valor 2: " + txtValue2.getText());
 		loadOperator();		
+		
+		Constraints.setTextFieldDouble(txtValue1);
+		Constraints.setTextFieldDouble(txtValue2);
+		
+		Constraints.setTextFieldMaxLength(txtValue1, 12);
+		Constraints.setTextFieldMaxLength(txtValue2, 12);
 	}
 	
 	
