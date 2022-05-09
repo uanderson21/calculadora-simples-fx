@@ -8,6 +8,7 @@ import java.util.ResourceBundle;
 import calculadora.Adicao;
 import calculadora.Divisao;
 import calculadora.Multiplicacao;
+import calculadora.OperacaoBinaria;
 import calculadora.Subtracao;
 import gui.util.Alerts;
 import gui.util.Constraints;
@@ -38,7 +39,7 @@ public class ViewCalcController implements Initializable {
 	public Button btnCalc;
 
 	private ObservableList<Operador> obsOperadores;
-	double result;
+	OperacaoBinaria opBinario;
 	
 	public void loadOperator() {
 		List<Operador> list = new ArrayList<>();
@@ -82,18 +83,19 @@ public class ViewCalcController implements Initializable {
 			
 			switch(op) {
 				case "+":
-					result = new Adicao().calcular(value1, value2);
+					opBinario = new Adicao();
 					break;
 				case "/":
-					result = new Divisao().calcular(value1, value2);
+					opBinario = new Divisao();
 					break;
 				case "-":
-					result = new Subtracao().calcular(value1, value2);
+					opBinario = new Subtracao();
 					break;
 				case "*":
-					result = new Multiplicacao().calcular(value1, value2);
+					opBinario = new Multiplicacao();
 					break;
 			}
+			double result = opBinario.calcular(value1, value2);
 			
 			txtResult.setText(String.valueOf(result));
 			
